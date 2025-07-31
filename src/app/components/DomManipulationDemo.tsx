@@ -29,7 +29,7 @@ export default function DomManipulationDemo() {
         Change Box Color (via DOM)
       </button>
       <div className="text-xs text-gray-600">
-        This directly changes the DOM node's style using a ref.
+        This directly changes the DOM node&apos;s style using a ref.
       </div>
     </div>
   );

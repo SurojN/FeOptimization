@@ -1,5 +1,5 @@
 import React from "react";
-import { Highlight } from "prism-react-renderer";
+import { Highlight, Token } from "prism-react-renderer";
 
 interface Props {
   code: string;
@@ -20,11 +20,11 @@ export default function CodePreview({ code, language = "tsx" }: Props) {
             fontSize: "14px",
           }}
         >
-          {tokens.map((line, i) => {
+          {tokens.map((line: Token[], i: number) => {
             const lineProps = getLineProps({ line });
             return (
               <div key={i} {...lineProps}>
-                {line.map((token: any, key: any) => {
+                {line.map((token: Token, key: number) => {
                   const tokenProps = getTokenProps({ token });
                   return <span key={key} {...tokenProps} />;
                 })}
