@@ -61,7 +61,7 @@ export default function LazyVsHeavy() {
         </button>
       </div>
       {mainTab === "code" && (
-        <section>
+        <section className="border rounded-lg p-4">
           <div className="flex gap-2 mb-4">
             <button
               className={`px-4 py-2 rounded ${
@@ -82,7 +82,7 @@ export default function LazyVsHeavy() {
           </div>
           {tab === "heavy" && <HeavyComponent />}
           {tab === "lazy" && <LazyComponent />}
-          <section>
+          <section className="border-b-2">
             <h2 className="text-2xl font-semibold mb-2">📄 Code Preview</h2>
             <CodePreview
               code={codeLazyHeavy}
@@ -92,7 +92,7 @@ export default function LazyVsHeavy() {
             />
           </section>
           <OptionalNullishDemo />
-          <section>
+          <section className="border-b-2">
             <h2 className="text-2xl font-semibold mb-2">📄 Code Preview</h2>
             <CodePreview
               code={codeOptionalNullish}
@@ -102,7 +102,7 @@ export default function LazyVsHeavy() {
             />
           </section>
           <ControlledVsUncontrolledDemo />
-          <section>
+          <section className="border-b-2">
             <h2 className="text-2xl font-semibold mb-2">📄 Code Preview</h2>
             <CodePreview
               code={codeInputs}
@@ -112,7 +112,7 @@ export default function LazyVsHeavy() {
             />
           </section>
           <ClosureDemo />
-          <section>
+          <section className="border-b-2">
             <h2 className="text-2xl font-semibold mb-2">📄 Code Preview</h2>
             <CodePreview
               code={codeClosure}
@@ -122,7 +122,7 @@ export default function LazyVsHeavy() {
             />
           </section>
           <EventLoopDemo />
-          <section>
+          <section className="border-b-2">
             <h2 className="text-2xl font-semibold mb-2">📄 Code Preview</h2>
             <CodePreview
               code={codeEventLoop}
@@ -132,7 +132,7 @@ export default function LazyVsHeavy() {
             />
           </section>
           <MemoryLeakDemo />
-          <section>
+          <section className="border-b-2">
             <h2 className="text-2xl font-semibold mb-2">📄 Code Preview</h2>
             <CodePreview
               code={codeMemoryLeak}
@@ -155,7 +155,6 @@ export default function LazyVsHeavy() {
       )}
       {mainTab === "article" && (
         <section className="mt-4">
-          <h2 className="text-2xl font-semibold mb-2">Articles</h2>
           <ArticleListing articles={articles} />
         </section>
       )}

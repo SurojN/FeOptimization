@@ -1,12 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-
 interface Article {
   title: string;
   slug: string;
   summary: string;
-  image: string;
-  code: string;
 }
 
 export interface ArticleListingProps {
@@ -15,22 +10,21 @@ export interface ArticleListingProps {
 
 const ArticleListing: React.FC<ArticleListingProps> = ({ articles }) => {
   return (
-    <ul>
-      {articles.map((article) => (
-        <li key={article.slug}>
-          <Link href={`/articles/${article.slug}`}>
-            <h2>{article.title}</h2>
-            <p>{article.summary}</p>
-            <Image
-              src={article.image}
-              alt={article.title}
-              width={500}
-              height={300}
-            />
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <section className="py-10 px-6">
+      <div className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map((article) => (
+          <div
+            key={article.slug}
+            className="bg-gray-300 rounded-2xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+          >
+            <h2 className="text-xl font-semibold text-blue-500 mb-2">
+              {article.title}
+            </h2>
+            <p className="text-gray-800 text-sm">{article.summary}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
